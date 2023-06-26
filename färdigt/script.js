@@ -21,3 +21,18 @@ function getUserWithPromise(error) {
     }, 3000);
   });
 }
+
+const user = getUserWithoutPromise();
+console.log(printTimeStamp(), user);
+
+const user2 = getUserWithPromise(true);
+console.log(printTimeStamp(), user2);
+
+const user3 = getUserWithPromise(false);
+console.log(printTimeStamp(), user3);
+
+function callbackForFinishedPromise(user4) {
+  console.log(printTimeStamp(), user4);
+}
+const notFinishedPromise = getUserWithPromise(false);
+notFinishedPromise.then(callbackForFinishedPromise);
