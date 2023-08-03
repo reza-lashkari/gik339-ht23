@@ -36,3 +36,5 @@ function callbackForFinishedPromise(user4) {
 }
 const notFinishedPromise = getUserWithPromise(false);
 notFinishedPromise.then(callbackForFinishedPromise);
+
+getUserWithPromise(false).then((userObject) => console.log(userObject));
