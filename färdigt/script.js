@@ -22,7 +22,7 @@ function getUserWithPromise(ok) {
   });
 }
 
-const user = getUserWithoutPromise();
+/* const user = getUserWithoutPromise();
 console.log(printTimeStamp(), user);
 
 const user2 = getUserWithPromise(false);
@@ -37,13 +37,30 @@ function callbackForFinishedPromise(user4) {
 const notFinishedPromise = getUserWithPromise(true);
 notFinishedPromise.then(callbackForFinishedPromise);
 
-getUserWithPromise(true).then((userObject) => console.log(userObject));
+getUserWithPromise(true).then((userObject) => console.log(userObject)); */
 
-function printInfo() {
-  getUserWithPromise(false).then((user) => {
+function printInfoWithThen() {
+  getUserWithPromise(true).then((user) => {
     //gör något komplicerat med detta userobjekt
-    getUserWithPromise(user).then((otherData) => console.log(otherData));
+    console.log(printTimeStamp(), user);
+    getUserWithPromise(user).then((otherData) => {
+      //vi kanske vill göra något komplicerat med otherData också...
+      console.log(printTimeStamp(), otherData);
+    });
   });
 }
 
-printInfo();
+printInfoWithThen();
+
+async function printInfoWithAsyncAwait() {
+  const user = await getUserWithPromise(true);
+  console.log(printTimeStamp(), user);
+  const otherData = await getUserWithPromise(user);
+  console.log(printTimeStamp(), otherData);
+}
+
+printInfoWithAsyncAwait();
+
+const url = 'https://my-json-server.typicode.com/mie-du/gik339-ht23/users';
+
+fetch(url).then((result) => console.log(result));
