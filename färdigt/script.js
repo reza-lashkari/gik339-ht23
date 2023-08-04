@@ -39,7 +39,7 @@ notFinishedPromise.then(callbackForFinishedPromise);
 
 getUserWithPromise(true).then((userObject) => console.log(userObject)); */
 
-function printInfoWithThen() {
+/* function printInfoWithThen() {
   getUserWithPromise(true).then((user) => {
     //gör något komplicerat med detta userobjekt
     console.log(printTimeStamp(), user);
@@ -59,8 +59,21 @@ async function printInfoWithAsyncAwait() {
   console.log(printTimeStamp(), otherData);
 }
 
-printInfoWithAsyncAwait();
+printInfoWithAsyncAwait(); */
 
 const url = 'https://my-json-server.typicode.com/mie-du/gik339-ht23/users';
 
-fetch(url).then((result) => console.log(result));
+/* fetch(url)
+  .then((result) => {
+    console.log(result);
+    return result.json();
+  })
+  .then((jsonData) => console.log(jsonData));
+ */
+
+fetch(url)
+  .then((result) => result.json())
+  .then((users) => {
+    const html = `<p>${users[0].firstName}</p>`;
+    document.body.insertAdjacentHTML('beforeend', html);
+  });
