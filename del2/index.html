@@ -19,7 +19,7 @@
       <div>
         <h2 class="sub">Del 2 - Skapa och ändra innehåll</h2>
         <div class="flex">
-          <div class="settings">
+          <form id="settings" class="settings">
             <div class="input-group">
               <label class="input-label" for="content">Innehåll</label>
               <input class="input-field" type="text" id="content" name="content" />
@@ -31,10 +31,12 @@
             <button id="addElement">Lägg till element</button>
             <button id="changeShape">Ändra form</button>
             <button id="changeSize">Ändra storlek</button>
-          </div>
+            <button type="reset">Rensa allt</button>
+          </form>
           <div id="output"></div>
         </div>
       </div>
+      <div id="dynamicDisplay"></div>
     </div>
 
     <script src="./script.js"></script>
