@@ -35,11 +35,12 @@ p {
 }
 
 .wrapper {
-  max-width: 55rem;
+  max-width: 75rem;
   margin: 3rem auto;
   padding: 1rem;
   font-family: Ubuntu, sans-serif;
   color: rgb(85, 13, 96);
+  background: white;
 }
 h2.sub {
   margin-bottom: 0.6em;
@@ -53,6 +54,10 @@ h1 {
   margin-bottom: 1em;
   font-size: 3rem;
   text-align: center;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-weight: 300;
   margin-bottom: 1rem;
 }
 #output,
@@ -103,7 +108,7 @@ h1 {
   font-size: 0.9rem;
 }
 button {
-  padding: 0.5rem;
+  padding: 0.3rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 0.3rem;
   outline: 0;
@@ -139,4 +144,20 @@ button:hover {
 .larger {
   width: 70%;
   height: 110px;
+}
+
+.form-control {
+  display: flex;
+  width: 40%;
+  margin: 0 auto 1rem auto;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.form-control label {
+  flex-basis: 10rem;
+  text-align: left;
+}
+.form-control select,
+.form-control input {
+  flex-grow: 1;
 }
